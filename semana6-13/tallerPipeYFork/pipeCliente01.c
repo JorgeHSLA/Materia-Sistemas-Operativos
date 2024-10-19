@@ -26,20 +26,20 @@ tema: FIFO, el ciente de manera unidiriccional, solo manda mensajes al servidor
   
      while (1) { //ciclo infinito
         printf("Enter string: ");
-        fgets(readbuf, sizeof(readbuf), stdin);
+        fgets(readbuf, sizeof(readbuf), stdin); // recibe el texto
         stringlen = strlen(readbuf);
         readbuf[stringlen - 1] = '\0';
-        end_process = strcmp(readbuf, end_str);
+        end_process = strcmp(readbuf, end_str); 
    
         //printf("end_process is %d\n", end_process);
-        if (end_process != 0) {
-           write(fd, readbuf, strlen(readbuf));
+        if (end_process != 0) {  //se revisa si readbuf y el end_str (end) son iguales
+           write(fd, readbuf, strlen(readbuf)); // escribe n la tuberia
            printf("Sent string: \"%s\" and string length is %d\n", readbuf, (int)    strlen(readbuf));
         } else {
-           write(fd, readbuf, strlen(readbuf));
+           write(fd, readbuf, strlen(readbuf)); // escribe n la tuberia
            printf("Sent string: \"%s\" and string length is %d\n", readbuf, (int)    strlen(readbuf));
            close(fd);
-           break;
+           break; // se termina
         }
      }
      return 0;
