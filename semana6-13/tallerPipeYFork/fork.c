@@ -2,7 +2,7 @@
 autor: jorge Sierra
 materia; Sistemas Operativos
 fecha: 3/10/2024
-tema: el fork(), saber como funcionan los fork
+tema: el fork(), saber como funciona los fork
  ********************************************************************************************/
     
     
@@ -15,12 +15,12 @@ tema: el fork(), saber como funcionan los fork
  void creacion_fork(int linea){
      pid_t proceso; 
      proceso = fork();
-     if(proceso<0){
+     if(proceso<0){ // si es negativo hay un error
          printf("Error creación proceso\n");
          exit(1);
-     }else if (proceso==0)
+     }else if (proceso==0)  // si es 0 significa quue el proceso es un hijo
          printf("%d: Proceso =HIJO=: %d\n",linea, getpid());
-     else
+     else // este else simboliza cuando proceso es positivo, si es positivo significa que es uno, uno representa que es un padre
          printf("%d: Proceso =PADRE= %d\n",linea, getpid());
  }
  
