@@ -2,7 +2,7 @@
 autor: jorge Sierra
 materia; Sistemas Operativos
 fecha: 8/08/2024
-tema: Uso de malloc en codigo de c, el cual se usa a traves de apuntadores
+tema: Uso de malloc en codigo de c
  ********************************************************************************************/
 
 #include <string.h>
